@@ -13,7 +13,7 @@ struct NowEvents: View {
     
     var body: some View {
         VStack {
-            ScrollView (showsIndicators: false){
+            ScrollView (showsIndicators: false) {
                 TextField("Search", text: $searchText)
                     .frame(width: 318, height: 36)
                     .background(Color("event_background"))
@@ -22,26 +22,29 @@ struct NowEvents: View {
                 ForEach (eventsNow) { event in
                     VStack {
                         HStack {
-                            Text("Event Image")
+                            Image(event.eventImage)
+                                .resizable()
                                 .frame(width: 89, height: 80)
                             VStack (alignment: .leading) {
                                 Text(event.name)
                                     .font(.system(size: 17))
                                     .bold()
                                 Text(event.local)
-                                    .font(.system(size: 15))
+                                    .frame(height: 40)
+                                    .lineLimit(2)
+                                    .font(.system(size: 14))
+                                    
                                 Text(event.hour)
-                                    .font(.system(size: 15))
+                                    .font(.system(size: 14))
                             }
-                            .padding(10)
-                            
+                            .padding(.leading, 1)
                         }
                     }
                     .foregroundColor(.white)
                     .frame(width: 315, height: 80, alignment: .leading)
                     .background(Color("event_background"))
                     .cornerRadius(10)
-                    Spacer()
+                    Spacer(minLength: 20)
                 }
             }
         }
