@@ -67,7 +67,10 @@ struct EventsInformation: View {
             .padding(.top, 51)
             
             HStack {
-                
+                ForEach(ArriveButtonType.allCases) { arriveButton in
+                    HowToArriveButtons(arriveButtonType: arriveButton)
+                        .frame(width: 71, height: 90)
+                }
             }
         }
         .background(Color("Backcolor"))
