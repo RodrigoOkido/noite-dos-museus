@@ -12,8 +12,10 @@
 		2B7C107926125231009DE8E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7C107826125231009DE8E4 /* ContentView.swift */; };
 		2B7C107B26125234009DE8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7C107A26125234009DE8E4 /* Assets.xcassets */; };
 		2B7C107E26125234009DE8E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7C107D26125234009DE8E4 /* Preview Assets.xcassets */; };
-		2BC0050926126E5D008C0ACF /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0050826126E5D008C0ACF /* Events.swift */; };
+		2BC0050926126E5D008C0ACF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0050826126E5D008C0ACF /* Event.swift */; };
+		2BC00510261272BB008C0ACF /* NowEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0050F261272BB008C0ACF /* NowEvents.swift */; };
 		CCCD0DF826128578000C5EC6 /* EventsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD0DF726128578000C5EC6 /* EventsInformation.swift */; };
+		CCCD0DFC2613AE47000C5EC6 /* HowToArriveButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD0DFB2613AE47000C5EC6 /* HowToArriveButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +26,10 @@
 		2B7C107A26125234009DE8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B7C107D26125234009DE8E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B7C107F26125234009DE8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BC0050826126E5D008C0ACF /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		2BC0050826126E5D008C0ACF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2BC0050F261272BB008C0ACF /* NowEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowEvents.swift; sourceTree = "<group>"; };
 		CCCD0DF726128578000C5EC6 /* EventsInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInformation.swift; sourceTree = "<group>"; };
+		CCCD0DFB2613AE47000C5EC6 /* HowToArriveButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToArriveButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,6 @@
 		2B7C107526125231009DE8E4 /* Noite_dos_Museus */ = {
 			isa = PBXGroup;
 			children = (
-				07BE130E26126EB7007BAE58 /* Onboarding.swift */,
 				2B7C107626125231009DE8E4 /* Noite_dos_MuseusApp.swift */,
 				2BC0050D26126F4D008C0ACF /* View */,
 				2B7C107A26125234009DE8E4 /* Assets.xcassets */,
@@ -80,7 +83,7 @@
 		2BC0050B26126F3E008C0ACF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2BC0050826126E5D008C0ACF /* Events.swift */,
+				2BC0050826126E5D008C0ACF /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,8 +91,11 @@
 		2BC0050D26126F4D008C0ACF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				07BE130E26126EB7007BAE58 /* Onboarding.swift */,
 				2B7C107826125231009DE8E4 /* ContentView.swift */,
 				CCCD0DF726128578000C5EC6 /* EventsInformation.swift */,
+				2BC0050F261272BB008C0ACF /* NowEvents.swift */,
+				CCCD0DFB2613AE47000C5EC6 /* HowToArriveButtons.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,8 +172,10 @@
 				07BE130F26126EB7007BAE58 /* Onboarding.swift in Sources */,
 				2B7C107926125231009DE8E4 /* ContentView.swift in Sources */,
 				CCCD0DF826128578000C5EC6 /* EventsInformation.swift in Sources */,
+				CCCD0DFC2613AE47000C5EC6 /* HowToArriveButtons.swift in Sources */,
 				2B7C107726125231009DE8E4 /* Noite_dos_MuseusApp.swift in Sources */,
-				2BC0050926126E5D008C0ACF /* Events.swift in Sources */,
+				2BC0050926126E5D008C0ACF /* Event.swift in Sources */,
+				2BC00510261272BB008C0ACF /* NowEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
