@@ -11,17 +11,16 @@ struct ScheduleEvents: View {
     @State var text: String = ""
     var body: some View {
         VStack {
-            Spacer()
-            HStack {
+//            HStack {
                 Text("Programacão")
+                    .font(.title)
                     .foregroundColor(.white)
-                    .padding(.bottom)
-                Divider()
-                    .background(Color.gray)
-                    .padding()
-                
-            }
+                    
+//            }
             
+            Divider()
+                .background(Color.white)
+                .padding()
             
             
             HStack {
@@ -56,38 +55,41 @@ struct ScheduleEvents: View {
             
             
             
-            ForEach(eventsProgramation){ event in
-                VStack(alignment: .leading){
-                    HStack {
-                        Text("Event Image")
-                            .frame(width: 89, height: 80)
-                        VStack (alignment: .leading) {
-                            Text(event.name)
-                                .font(.system(size: 17))
-                                .bold()
-                            Text(event.local)
-                                .font(.system(size: 15))
-                            Text(event.hour)
-                                .font(.system(size: 15))
+            ScrollView {
+                VStack {
+                    ForEach(eventsProgramation){ event in
+                        VStack(alignment: .leading){
+                            HStack {
+                                Text("Event Image")
+                                    .frame(width: 89, height: 80)
+                                VStack (alignment: .leading) {
+                                    Text(event.name)
+                                        .font(.system(size: 17))
+                                        .bold()
+                                    Text(event.local)
+                                        .font(.system(size: 15))
+                                    Text(event.hour)
+                                        .font(.system(size: 15))
+                                }
+                                .padding(10)
+                            }
+                            
                         }
-                        .padding(10)
+                        
                     }
-                    
+                    .padding(.vertical, 4.0)
+                    .foregroundColor(.white)
+                    .frame(width: 315, height: 80, alignment: .leading)
+                    .background(Color("event_background"))
+                    .cornerRadius(10)
                 }
-                
             }
-            .padding(.vertical, 4.0)
-            .foregroundColor(.white)
-            .frame(width: 315, height: 80, alignment: .leading)
-            .background(Color("event_background"))
-            .cornerRadius(10)
             
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
-        
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
