@@ -11,7 +11,8 @@ struct ScheduleEvents: View {
     @State var text: String = ""
     var body: some View {
         VStack {
-//            HStack {
+            Spacer(minLength: 30)
+//           HStack {
                 Text("Programacão")
                     .font(.title)
                     .foregroundColor(.white)
@@ -89,7 +90,7 @@ struct ScheduleEvents: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
-        .edgesIgnoringSafeArea(.bottom)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
