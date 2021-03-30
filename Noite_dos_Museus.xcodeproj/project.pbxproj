@@ -13,6 +13,7 @@
 		2B7C107B26125234009DE8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7C107A26125234009DE8E4 /* Assets.xcassets */; };
 		2B7C107E26125234009DE8E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7C107D26125234009DE8E4 /* Preview Assets.xcassets */; };
 		2BC0050926126E5D008C0ACF /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0050826126E5D008C0ACF /* Events.swift */; };
+		CCCD0DF826128578000C5EC6 /* EventsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD0DF726128578000C5EC6 /* EventsInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2B7C107D26125234009DE8E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B7C107F26125234009DE8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BC0050826126E5D008C0ACF /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		CCCD0DF726128578000C5EC6 /* EventsInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				2B7C107826125231009DE8E4 /* ContentView.swift */,
+				CCCD0DF726128578000C5EC6 /* EventsInformation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				07BE130F26126EB7007BAE58 /* Onboarding.swift in Sources */,
 				2B7C107926125231009DE8E4 /* ContentView.swift in Sources */,
+				CCCD0DF826128578000C5EC6 /* EventsInformation.swift in Sources */,
 				2B7C107726125231009DE8E4 /* Noite_dos_MuseusApp.swift in Sources */,
 				2BC0050926126E5D008C0ACF /* Events.swift in Sources */,
 			);
