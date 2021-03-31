@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScheduleEvents: View {
     @State var text: String = ""
+    @State private var showingSheet = false
     var body: some View {
         VStack {
             Spacer(minLength: 30)
@@ -21,13 +22,13 @@ struct ScheduleEvents: View {
             
             Divider()
                 .background(Color.white)
-                .padding()
+                .padding(.vertical)
             
             
             HStack {
                 TextField("search", text: $text)
                     .padding(.leading,20)
-                    .foregroundColor(.gray)
+                    
             }
             .padding(7)
             .padding(.horizontal)
@@ -42,26 +43,29 @@ struct ScheduleEvents: View {
                 }
                 .padding(.horizontal,20)
             )
-            
-            HStack {
-                Text("Filtro")
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 30)
-                    .background(Color(.systemGray))
-                    .cornerRadius(13)
-                    .padding(.leading,15)
+            HStack{
+                HStack{
+                    Button("Filtro") {
+                        showingSheet.toggle()
+                    }.sheet(isPresented: $showingSheet) {
+                        Filter()
+                    }
+                    
+                }.foregroundColor(.white)
+                .multilineTextAlignment(.leading)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 30)
+                .background(Color(.systemGray))
+                .cornerRadius(13)
+                .padding(.leading,15)
                 Spacer()
             }
-            
-            
-            
             ScrollView {
                 VStack {
                     ForEach(eventsProgramation){ event in
                         VStack(alignment: .leading){
                             HStack {
-                                Text("Event Image")
+                                Image(event.eventImage)
+                                    .resizable()
                                     .frame(width: 89, height: 80)
                                 VStack (alignment: .leading) {
                                     Text(event.name)
@@ -76,13 +80,15 @@ struct ScheduleEvents: View {
                             }
                             
                         }
+                        .padding(.vertical, 4.0)
+                        .foregroundColor(.white)
+                        .frame(width: 315, height: 80, alignment: .leading)
+                        .background(Color("event_background"))
+                        .cornerRadius(10)
+                        Spacer(minLength: 20)
                         
                     }
-                    .padding(.vertical, 4.0)
-                    .foregroundColor(.white)
-                    .frame(width: 315, height: 80, alignment: .leading)
-                    .background(Color("event_background"))
-                    .cornerRadius(10)
+                    
                 }
             }
             
