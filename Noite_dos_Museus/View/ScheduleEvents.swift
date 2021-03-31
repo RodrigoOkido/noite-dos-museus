@@ -21,13 +21,13 @@ struct ScheduleEvents: View {
             
             Divider()
                 .background(Color.white)
-                .padding()
+                .padding(.vertical)
             
             
             HStack {
                 TextField("search", text: $text)
                     .padding(.leading,20)
-                    .foregroundColor(.gray)
+                    
             }
             .padding(7)
             .padding(.horizontal)
@@ -61,7 +61,8 @@ struct ScheduleEvents: View {
                     ForEach(eventsProgramation){ event in
                         VStack(alignment: .leading){
                             HStack {
-                                Text("Event Image")
+                                Image(event.eventImage)
+                                    .resizable()
                                     .frame(width: 89, height: 80)
                                 VStack (alignment: .leading) {
                                     Text(event.name)
@@ -76,13 +77,15 @@ struct ScheduleEvents: View {
                             }
                             
                         }
+                        .padding(.vertical, 4.0)
+                        .foregroundColor(.white)
+                        .frame(width: 315, height: 80, alignment: .leading)
+                        .background(Color("event_background"))
+                        .cornerRadius(10)
+                        Spacer(minLength: 20)
                         
                     }
-                    .padding(.vertical, 4.0)
-                    .foregroundColor(.white)
-                    .frame(width: 315, height: 80, alignment: .leading)
-                    .background(Color("event_background"))
-                    .cornerRadius(10)
+                    
                 }
             }
             
