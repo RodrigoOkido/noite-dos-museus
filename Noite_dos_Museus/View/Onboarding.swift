@@ -109,7 +109,13 @@ struct Onboarding2: View {
                     
                 }
                 Spacer()
-                HStack{
+                ZStack{
+                    Image("Tela 2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.leading,-80)
+                        .frame(maxWidth: 300, maxHeight: 100)
+                        .border(Color.red, width: 5)
                 NavigationLink(
                     destination: Text("Destination"),
                     label: {
@@ -118,15 +124,9 @@ struct Onboarding2: View {
                             .background(Color("Buttoncolor"))
                             .foregroundColor(.white)
                             .cornerRadius(25)
-                        
+
                     })
-                    .padding(.bottom, -40)}
-                HStack{
-                        Image("Tela 2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                            .padding(.leading,-80)
-                            .frame(maxWidth: 300, maxHeight: 100)
+                    .padding(.bottom, 40)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
