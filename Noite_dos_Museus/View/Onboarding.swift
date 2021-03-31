@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SplashScreen: View {
+   
+    @State var onScreen1: Bool = false
+
     var body: some View {
         NavigationView{
             VStack{
@@ -22,16 +25,30 @@ struct SplashScreen: View {
                                 .resizable()
                                 .frame(width: 400, height: 300)
                         }
-                        NavigationLink(
-                            destination: Onboarding1(),
-                            label: {
-                                Text("Próximo")
-                                    .frame(width: 200, height: 50, alignment:.center)
-                                    .background(Color("event_background"))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(25)
-                            })
+                        
+                        Button(action: {
+                            self.onScreen1 = true
+                        }, label: {
+                            Text("Próximo")
+                                .frame(width: 200, height: 50, alignment:.center)
+                                .background(Color("event_background"))
+                                .foregroundColor(.white)
+                                .cornerRadius(25)
+                        })
                             .padding(.bottom, 200)
+                        
+//                        NavigationLink(
+//                            destination: Onboarding1(),
+//                            label: {
+//                                Text("Próximo")
+//                                    .frame(width: 200, height: 50, alignment:.center)
+//                                    .background(Color("event_background"))
+//                                    .foregroundColor(.white)
+//                                    .cornerRadius(25)
+//                            })
+//                            .padding(.bottom, 200)
+                        
+                        
                     }
                 }
                 .frame(maxHeight: 300)
@@ -39,11 +56,17 @@ struct SplashScreen: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Backcolor"))
             .edgesIgnoringSafeArea(.all)
+            .fullScreenCover(isPresented: $onScreen1, content: {
+                Onboarding1()
+            })
         }
     }
 }
 
 struct Onboarding1: View {
+    
+    @State var onScreen2: Bool = false
+    
     var body: some View {
         VStack{
             HStack{
@@ -75,25 +98,42 @@ struct Onboarding1: View {
             
             Spacer()
             
-            NavigationLink(
-                destination: Onboarding2(),
-                label: {
-                    Text("Próximo")
-                        .frame(width: 280, height: 50, alignment:.center)
-                        .background(Color("Buttoncolor"))
-                        .foregroundColor(.white)
-                        .cornerRadius(25)
-                    
-                })
+            Button(action: {
+                self.onScreen2 = true
+            }, label: {
+                Text("Próximo")
+                    .frame(width: 280, height: 50, alignment:.center)
+                    .background(Color("Buttoncolor"))
+                    .foregroundColor(.white)
+                    .cornerRadius(25)
+            })
                 .padding(.bottom, 70)
+            
+//            NavigationLink(
+//                destination: Onboarding2(),
+//                label: {
+//                    Text("Próximo")
+//                        .frame(width: 280, height: 50, alignment:.center)
+//                        .background(Color("Buttoncolor"))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(25)
+//                    
+//                })
+//                .padding(.bottom, 70)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
         .edgesIgnoringSafeArea(.all)
+        .fullScreenCover(isPresented: $onScreen2, content: {
+            Onboarding2()
+        })
     }
 }
 
 struct Onboarding2: View {
+    
+    @State var onScreen3: Bool = false
+
     var body: some View {
         NavigationView{
             VStack{
@@ -124,22 +164,38 @@ struct Onboarding2: View {
                         .aspectRatio(contentMode: .fill)
                         .padding(.leading,-80)
                         .frame(maxWidth: 300, maxHeight: 100)
-                NavigationLink(
-                    destination: Text("Destination"),
-                    label: {
-                        Text("Próximo")
-                            .frame(width: 280, height: 50, alignment:.center)
-                            .background(Color("Buttoncolor"))
-                            .foregroundColor(.white)
-                            .cornerRadius(25)
-
-                    })
+                    
+                
+                Button(action: {
+                    self.onScreen3 = true
+                }, label: {
+                    Text("Próximo")
+                        .frame(width: 280, height: 50, alignment:.center)
+                        .background(Color("Buttoncolor"))
+                        .foregroundColor(.white)
+                        .cornerRadius(25)
+                })
                     .padding(.bottom, 70)
+                    
+//                NavigationLink(
+//                    destination: Text("Destination"),
+//                    label: {
+//                        Text("Próximo")
+//                            .frame(width: 280, height: 50, alignment:.center)
+//                            .background(Color("Buttoncolor"))
+//                            .foregroundColor(.white)
+//                            .cornerRadius(25)
+//
+//                    })
+//                    .padding(.bottom, 70)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Backcolor"))
             .edgesIgnoringSafeArea(.all)
+            .fullScreenCover(isPresented: $onScreen3, content: {
+                Login()
+            })
             
         }
     }

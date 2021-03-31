@@ -13,31 +13,53 @@ struct NowEvents: View {
     
     var body: some View {
         VStack {
+            Divider()
+            Spacer(minLength: 30)
+
+            HStack {
+                TextField("search", text: $searchText)
+                        .padding(.leading,20)
+                .padding(7)
+                .padding(.horizontal)
+                .background(Color(.darkGray))
+                .cornerRadius(12)
+                .padding(.horizontal, 15)
+                .overlay (
+                    HStack{
+                        Image(systemName:"magnifyingglass")
+                            .foregroundColor(Color(.systemGray))
+                        Spacer()
+                    }
+                    .padding(.horizontal,20)
+                )
+            }
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
+            .padding(.top, 20)
+            .padding(.bottom, 9)
+
             ScrollView (showsIndicators: false) {
-                TextField("Search", text: $searchText)
-                    .frame(width: 318, height: 36)
-                    .background(Color("event_background"))
-                    .padding()
-                    .foregroundColor(.white)
                 ForEach (eventsNow) { event in
-                    VStack {
-                        HStack {
-                            Image(event.eventImage)
-                                .resizable()
-                                .frame(width: 89, height: 80)
-                            VStack (alignment: .leading) {
-                                Text(event.name)
-                                    .font(.system(size: 17))
-                                    .bold()
-                                Text(event.local)
-                                    .frame(height: 40)
-                                    .lineLimit(2)
-                                    .font(.system(size: 14))
-                                    
-                                Text(event.hour)
-                                    .font(.system(size: 14))
-                            }
-                            .padding(.leading, 1)
+                    NavigationLink(destination: EventsInformation(eventImage: event.eventImage, eventName: event.name, eventLocation: event.local, eventHour: event.hour, eventDescription: event.description)) {
+                        VStack {
+                            HStack {
+                                Image(event.eventImage)
+                                    .resizable()
+                                    .frame(width: 89, height: 80)
+                                VStack (alignment: .leading) {
+                                    Text(event.name)
+                                        .font(.system(size: 17))
+                                        .bold()
+                                    Text(event.local)
+                                        .frame(height: 40)
+                                        .lineLimit(2)
+                                        .font(.system(size: 14))
+                                        
+                                    Text(event.hour)
+                                        .font(.system(size: 14))
+                                }
+                                .padding(.leading, 1)
+                                }
                         }
                     }
                     .foregroundColor(.white)

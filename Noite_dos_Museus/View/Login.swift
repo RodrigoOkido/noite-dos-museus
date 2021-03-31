@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct Login: View {
+    
     @State var nome = ""
     @State var idade = ""
     @State var senha = ""
     @State var foto = ""
+    @State var onScreen3: Bool = false
 
 
-    
     var body: some View {
         
-        
         VStack {
-            
             
             Text ("Criar Conta")
                 .font(.system(size: 34, weight: .bold))
@@ -28,7 +27,7 @@ struct Login: View {
             
             
             
-            VStack{
+            VStack {
                 
                 ZStack {
                     Image("branco")
@@ -80,17 +79,21 @@ struct Login: View {
                 
             }
         
-            Button(action: {}) {
+            Button(action: {
+                self.onScreen3 = true
+            }) {
                 Text("Criar Conta")
-                .font(.system(size: 14, weight: .light))
+                .font(.system(size: 15, weight: .light))
                 
               }
               .padding()
-              .frame(width:250, height: 30)
+              .frame(maxWidth: .infinity)
               .foregroundColor(.white)
               .background(Color.gray)
               .cornerRadius(20)
             .padding(.top, 200)
+            .padding(.leading, 30)
+            .padding(.trailing, 30)
         
         }
     
@@ -98,6 +101,9 @@ struct Login: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color("Backcolor"))
         .ignoresSafeArea()
+        .fullScreenCover(isPresented: $onScreen3, content: {
+            ContentView()
+        })
     }
     
     struct Login_Previews: PreviewProvider {

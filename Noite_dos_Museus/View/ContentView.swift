@@ -10,15 +10,25 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            NowEvents()
-                .tabItem {
-                    Label ("Agora", systemImage: "dot.radiowaves.left.and.right")
-                }
-            ScheduleEvents()
-                .tabItem {
-                    Label ("Programação", systemImage: "calendar")
-                }
+            NavigationView {
+                NowEvents()
+                    .navigationTitle("Agora")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label ("Agora", systemImage: "dot.radiowaves.left.and.right")
+            }
+
+            NavigationView {
+                ScheduleEvents()
+                    .navigationTitle("Programação")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Label ("Programação", systemImage: "calendar")
+            }
         }
+        .environment(\.colorScheme, .dark)
     }
 }
 
