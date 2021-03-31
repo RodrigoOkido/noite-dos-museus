@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScheduleEvents: View {
     @State var text: String = ""
+    @State private var showingSheet = false
     var body: some View {
         VStack {
             Spacer(minLength: 30)
@@ -42,20 +43,22 @@ struct ScheduleEvents: View {
                 }
                 .padding(.horizontal,20)
             )
-            
-            HStack {
-                Text("Filtro")
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 30)
-                    .background(Color(.systemGray))
-                    .cornerRadius(13)
-                    .padding(.leading,15)
+            HStack{
+                HStack{
+                    Button("Filtro") {
+                        showingSheet.toggle()
+                    }.sheet(isPresented: $showingSheet) {
+                        Filter()
+                    }
+                    
+                }.foregroundColor(.white)
+                .multilineTextAlignment(.leading)
+                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 30)
+                .background(Color(.systemGray))
+                .cornerRadius(13)
+                .padding(.leading,15)
                 Spacer()
             }
-            
-            
-            
             ScrollView {
                 VStack {
                     ForEach(eventsProgramation){ event in
