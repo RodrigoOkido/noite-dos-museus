@@ -97,6 +97,5 @@ struct ScheduleEvents: View {
 struct ScheduleEvents_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleEvents()
-        
     }
 }
