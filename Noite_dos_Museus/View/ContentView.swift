@@ -9,8 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            NowEvents()
+                .tabItem {
+                    Label ("Agora", systemImage: "dot.radiowaves.left.and.right")
+                }
+            ScheduleEvents()
+                .tabItem {
+                    Label ("Programação", systemImage: "calendar")
+                }
+        }
     }
 }
 

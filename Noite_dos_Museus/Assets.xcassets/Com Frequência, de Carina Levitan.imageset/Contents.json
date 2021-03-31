@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Com Frequência, de Carina Levitan.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "Detalhe (1).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
