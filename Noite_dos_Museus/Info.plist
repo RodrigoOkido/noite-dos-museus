@@ -29,6 +29,10 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>Background color</key>
+	<string>Backcolor</string>
+	<key>Image Name</key>
+	<string>launchscreen_together</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
