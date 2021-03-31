@@ -7,29 +7,6 @@
 
 import SwiftUI
 
-<<<<<<< Updated upstream
-struct Onboarding: View {
-    var body: some View {
-        VStack {
-            Image("Logo")
-                .resizable()
-                .frame(width: 250.0, height: 200.0)
-            ZStack {
-                    Image("Detalhe Laranja").resizable()
-                        .frame(width: 150.0, height: 250.0)
-                        .offset(x: -80.0, y: 70.0)
-                    Image("Detalhe (1)").resizable()
-                        .frame(width: 120.0, height: 250.0)
-                        .offset(x: -100.0, y: 69.0)
-                    Image("Detalhe").resizable()
-                        .frame(width: 150.0, height: 250.0)
-                        .offset(x: -80.0, y: 70.0)
-                    Image("Detalhe Roxo").resizable()
-                        .frame(width: 150.0, height: 250.0)
-                        .offset(x: -80.0, y: 70.0)
-                
-            }
-=======
 struct SplashScreen: View {
     var body: some View {
         VStack{
@@ -48,7 +25,6 @@ struct SplashScreen: View {
                 
             }
             .frame(maxHeight: 300)
->>>>>>> Stashed changes
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
@@ -56,11 +32,6 @@ struct SplashScreen: View {
     }
 }
 
-<<<<<<< Updated upstream
-struct Onboarding_Previews: PreviewProvider {
-    static var previews: some View {
-        Onboarding()
-=======
 struct Onboarding1: View {
     var body: some View {
         NavigationView{
@@ -180,6 +151,5 @@ struct Onboarding_Previews: PreviewProvider {
             .previewDevice("iPhone SE (2nd generation)")
         //SplashScreen()
             .previewDevice("iPhone 8")
->>>>>>> Stashed changes
     }
 }

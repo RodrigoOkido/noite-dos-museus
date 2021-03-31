@@ -93,10 +93,7 @@
 		2BC0050D26126F4D008C0ACF /* View */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
 				CDEA18782613998D00F9860C /* ScheduleEvents.swift */,
-=======
->>>>>>> Stashed changes
 				07BE130E26126EB7007BAE58 /* Onboarding.swift */,
 				2B7C107826125231009DE8E4 /* ContentView.swift */,
 				CCCD0DF726128578000C5EC6 /* EventsInformation.swift */,
