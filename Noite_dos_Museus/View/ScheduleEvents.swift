@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+
+/**
+    ScheduleEvents. Show all the programation planned to the user. Can found all events which will
+    happen at the event.
+ */
 struct ScheduleEvents: View {
     
     @State var text: String = ""

@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+
+/**
+    EventsInformation. Show the event detailed on screen.  Every info desired to know
+    about the info can be researched here.
+ */
 struct EventsInformation: View {
     
     // Events basic informations

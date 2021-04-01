@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+
+/**
+    NowEvents. Show all the events happening right now to the user.
+ */
 struct NowEvents: View {
     
     @State var searchText = ""

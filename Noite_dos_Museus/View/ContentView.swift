@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+
+/**
+    ContentView. Show the main screen of the app. 
+ */
 struct ContentView: View {
     var body: some View {
         TabView {

@@ -7,13 +7,21 @@
 
 import SwiftUI
 
+
+/**
+    Login View. 
+ */
 struct Login: View {
     
     @State var nome = ""
     @State var idade = ""
     @State var senha = ""
     @State var foto = ""
-    @State var onScreen3: Bool = false
+    @State var goToContentView: Bool = false
+    
+    var allFilled : Bool {
+        return (!self.nome.isEmpty && !self.idade.isEmpty && !self.senha.isEmpty)
+    }
 
 
     var body: some View {
@@ -66,7 +74,7 @@ struct Login: View {
                 
                 
                 
-                TextField ("Senha", text: $senha)
+                SecureField ("Senha", text: $senha)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(height:36)
                     .background(Color.white)
@@ -80,17 +88,17 @@ struct Login: View {
             }
         
             Button(action: {
-                self.onScreen3 = true
+                self.goToContentView = true
             }) {
                 Text("Criar Conta")
-                .font(.system(size: 15, weight: .light))
-                
+                    .font(.system(size: 15, weight: .light))
               }
-              .padding()
-              .frame(maxWidth: .infinity)
-              .foregroundColor(.white)
-              .background(Color.gray)
-              .cornerRadius(20)
+            .disabled(!allFilled)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background(allFilled ?  Color("Buttoncolor") : Color.gray)
+            .cornerRadius(20)
             .padding(.top, 200)
             .padding(.leading, 30)
             .padding(.trailing, 30)
@@ -101,7 +109,7 @@ struct Login: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color("Backcolor"))
         .ignoresSafeArea()
-        .fullScreenCover(isPresented: $onScreen3, content: {
+        .fullScreenCover(isPresented: $goToContentView, content: {
             ContentView()
         })
     }
