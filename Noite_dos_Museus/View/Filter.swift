@@ -14,27 +14,37 @@ struct Filter: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var currentDate = Date()
     var body: some View {
-        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
-        Text("Filtro")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .bold()
-            .foregroundColor(.white)
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Backcolor"))
-        .edgesIgnoringSafeArea(.all)
-        VStack(alignment: .leading){
-            
-            FilterComponents()
-            Text("Horário")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        
+//        Text("Filtro")
+//            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+//            .bold()
+//            .foregroundColor(.white)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background(Color("Backcolor"))
+//        .edgesIgnoringSafeArea(.all)
+        
+        VStack{
+            Text("Filtro")
+                .font(.title)
                 .bold()
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 5)
                 .foregroundColor(.white)
-            
-            DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                .labelsHidden()
+            Divider()
+            FilterComponents()
+            HStack{
+                VStack{
+                    Text("Horário")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .bold()
+                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 5)
+                        .foregroundColor(.white)
+                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                }
+                Spacer()
+            }
             Spacer()
-        }.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 40)
+        }
+        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
         .edgesIgnoringSafeArea(.all)
