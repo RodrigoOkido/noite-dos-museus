@@ -16,6 +16,7 @@ struct ScheduleEvents: View {
     
     @State var text: String = ""
     @State private var showingSheet = false
+    @State private var events = eventsProgramation
     
     var body: some View {
         VStack {
@@ -77,7 +78,7 @@ struct ScheduleEvents: View {
             
             ScrollView {
                 VStack {
-                    ForEach(eventsProgramation){ event in
+                    ForEach(getFilteredEvents()){ event in
                         NavigationLink(destination: EventsInformation(eventImage: event.eventImage, eventName: event.name, eventLocation: event.local, eventHour: event.hour, eventDescription: event.description)) {
                             VStack(alignment: .leading){
                                 HStack {
@@ -110,6 +111,16 @@ struct ScheduleEvents: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
+    }
+    
+    func getFilteredEvents() -> [Event] {
+        if text != "" {
+            return eventsProgramation.filter {
+                $0.name.uppercased().contains(text.uppercased())
+            }
+        } else {
+            return eventsProgramation
+        }
     }
 }
 

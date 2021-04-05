@@ -14,6 +14,7 @@ import SwiftUI
 struct NowEvents: View {
     
     @State var searchText = ""
+    @State private var events = eventsNow
     
     var body: some View {
         VStack {
@@ -44,7 +45,7 @@ struct NowEvents: View {
             .padding(.bottom, 9)
 
             ScrollView (showsIndicators: false) {
-                ForEach (eventsNow) { event in
+                ForEach (getFilteredEvents()) { event in
                     NavigationLink(destination: EventsInformation(eventImage: event.eventImage, eventName: event.name, eventLocation: event.local, eventHour: event.hour, eventDescription: event.description)) {
                         VStack {
                             HStack {
@@ -77,6 +78,16 @@ struct NowEvents: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
+    }
+    
+    func getFilteredEvents() -> [Event] {
+        if searchText != "" {
+            return eventsNow.filter {
+                $0.name.uppercased().contains(searchText.uppercased())
+            }
+        } else {
+            return eventsNow
+        }
     }
 }
 
