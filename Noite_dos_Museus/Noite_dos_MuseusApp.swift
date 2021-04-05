@@ -11,7 +11,7 @@ import SwiftUI
 struct Noite_dos_MuseusApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreen()
         }
     }
 }

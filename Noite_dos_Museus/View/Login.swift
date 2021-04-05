@@ -7,19 +7,26 @@
 
 import SwiftUI
 
+
+/**
+    Login View. 
+ */
 struct Login: View {
+    
     @State var nome = ""
     @State var idade = ""
     @State var senha = ""
     @State var foto = ""
-
-
+    @State var goToContentView: Bool = false
     
+    var allFilled : Bool {
+        return (!self.nome.isEmpty && !self.idade.isEmpty && !self.senha.isEmpty)
+    }
+
+
     var body: some View {
         
-        
         VStack {
-            
             
             Text ("Criar Conta")
                 .font(.system(size: 34, weight: .bold))
@@ -28,7 +35,7 @@ struct Login: View {
             
             
             
-            VStack{
+            VStack {
                 
                 ZStack {
                     Image("branco")
@@ -67,7 +74,7 @@ struct Login: View {
                 
                 
                 
-                TextField ("Senha", text: $senha)
+                SecureField ("Senha", text: $senha)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(height:36)
                     .background(Color.white)
@@ -80,17 +87,21 @@ struct Login: View {
                 
             }
         
-            Button(action: {}) {
+            Button(action: {
+                self.goToContentView = true
+            }) {
                 Text("Criar Conta")
-                .font(.system(size: 14, weight: .light))
-                
+                    .font(.system(size: 15, weight: .light))
               }
-              .padding()
-              .frame(width:250, height: 30)
-              .foregroundColor(.white)
-              .background(Color.gray)
-              .cornerRadius(20)
+            .disabled(!allFilled)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .foregroundColor(.white)
+            .background(allFilled ?  Color("Buttoncolor") : Color.gray)
+            .cornerRadius(20)
             .padding(.top, 200)
+            .padding(.leading, 30)
+            .padding(.trailing, 30)
         
         }
     
@@ -98,6 +109,9 @@ struct Login: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color("Backcolor"))
         .ignoresSafeArea()
+        .fullScreenCover(isPresented: $goToContentView, content: {
+            ContentView()
+        })
     }
     
     struct Login_Previews: PreviewProvider {

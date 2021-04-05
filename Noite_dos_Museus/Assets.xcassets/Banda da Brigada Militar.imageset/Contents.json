@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Banda da Brigada Militar.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Banda da Brigada Militar.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

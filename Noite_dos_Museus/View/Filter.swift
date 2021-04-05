@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Filter. User can use filter to define what type of events  desire to watch.
+ */
 struct Filter: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {

@@ -7,34 +7,16 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
-    var body: some View {
-        VStack{
-            Spacer(minLength: 320)
-            Image("Logo")
-                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Spacer()
-            HStack{
-                ZStack {
-                    ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)){
-                        Image("Splash screen-2")
-                            .resizable()
-                            .frame(width: 400, height: 300)
-                    }
-                }
-                
-            }
-            .frame(maxHeight: 300)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Backcolor"))
-        .edgesIgnoringSafeArea(.all)
-    }
-}
 
+/**
+    Onboarding Screen. Show some basic informations about the app.
+ */
 struct Onboarding1: View {
+    
+//    @State var onScreen2: Bool = false
+    
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack{
                 HStack{
                     Image("Tela 1")
@@ -65,6 +47,17 @@ struct Onboarding1: View {
                 
                 Spacer()
                 
+//                Button(action: {
+//                    self.onScreen2 = true
+//                }, label: {
+//                    Text("Próximo")
+//                        .frame(width: 280, height: 50, alignment:.center)
+//                        .background(Color("Buttoncolor"))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(25)
+//                })
+//                    .padding(.bottom, 70)
+                
                 NavigationLink(
                     destination: Onboarding2(),
                     label: {
@@ -73,51 +66,73 @@ struct Onboarding1: View {
                             .background(Color("Buttoncolor"))
                             .foregroundColor(.white)
                             .cornerRadius(25)
-                        
+    
                     })
                     .padding(.bottom, 70)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Backcolor"))
             .edgesIgnoringSafeArea(.all)
+//            .fullScreenCover(isPresented: $onScreen2, content: {
+//                Onboarding2()
+//            })
         }
+        
     }
 }
 
+
+/**
+    Second onboard screen view to show more info about the app.
+ */
 struct Onboarding2: View {
+    
+//    @State var onScreen3: Bool = false
+
     var body: some View {
-        NavigationView{
-            VStack{
+        VStack{
+            Spacer()
+            HStack {
+                Text("No app é possivel encontrar toda a programação para você não perder nada")
+                    .padding()
+                    .padding(.trailing, 50)
+                    .foregroundColor(.white)
+                    .font(.system(size:20))
+                    .lineLimit(4)
                 Spacer()
-                HStack {
-                    Text("No app é possivel encontrar toda a programação para você não perder nada")
-                        .padding()
-                        .padding(.trailing, 50)
-                        .foregroundColor(.white)
-                        .font(.system(size:20))
-                        .lineLimit(4)
-                    Spacer()
-                }
+            }
+            
+            HStack {
+                Text("Além disso você também encontra rotas para facilitar seu deslocamento entre os museus na noite")
+                    .foregroundColor(.white)
+                    .font(.system(size:20.0))
+                    .lineLimit(4)
+                    .padding()
+                    .padding(.leading, 70)
                 
-                HStack {
-                    Text("Além disso você também encontra rotas para facilitar seu deslocamento entre os museus na noite")
-                        .foregroundColor(.white)
-                        .font(.system(size:20.0))
-                        .lineLimit(4)
-                        .padding()
-                        .padding(.leading, 70)
-                    
-                }
-                Spacer()
-                ZStack{
-                    Image("Tela 2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.leading,-80)
-                        .frame(maxWidth: 300, maxHeight: 100)
-                        .border(Color.red, width: 5)
+            }
+            Spacer()
+            ZStack{
+                Image("Tela 2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.leading,-80)
+                    .frame(maxWidth: 300, maxHeight: 100)
+                
+            
+//            Button(action: {
+//                self.onScreen3 = true
+//            }, label: {
+//                Text("Próximo")
+//                    .frame(width: 280, height: 50, alignment:.center)
+//                    .background(Color("Buttoncolor"))
+//                    .foregroundColor(.white)
+//                    .cornerRadius(25)
+//            })
+//                .padding(.bottom, 70)
+                
                 NavigationLink(
-                    destination: Text("Destination"),
+                    destination: Login(),
                     label: {
                         Text("Próximo")
                             .frame(width: 280, height: 50, alignment:.center)
@@ -126,22 +141,24 @@ struct Onboarding2: View {
                             .cornerRadius(25)
 
                     })
-                    .padding(.bottom, 40)
-                }
+                    .padding(.bottom, 70)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("Backcolor"))
-            .edgesIgnoringSafeArea(.all)
-            
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("Backcolor"))
+        .edgesIgnoringSafeArea(.all)
+//        .fullScreenCover(isPresented: $onScreen3, content: {
+//            Login()
+//        })
     }
+    
 }
 
 
 struct Onboarding_Previews: PreviewProvider {
     static var previews: some View {
-        //SplashScreen()
-        Onboarding1()
+        SplashScreen()
+        //Onboarding1()
         //Onboarding2()
             .previewDevice("iPhone 12")
             .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
