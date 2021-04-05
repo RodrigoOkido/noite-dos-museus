@@ -37,7 +37,7 @@ struct ScheduleEvents: View {
                         .padding(.leading,20)
                 .padding(7)
                 .padding(.horizontal)
-                    .background(Color(.darkGray))
+                    .background(Color("event_background"))
                 .cornerRadius(12)
                 .padding(.horizontal, 15)
                 .overlay (
@@ -65,7 +65,7 @@ struct ScheduleEvents: View {
                 }.foregroundColor(.white)
                 .multilineTextAlignment(.leading)
                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 30)
-                .background(Color(.darkGray))
+                .background(Color("event_background"))
                 .cornerRadius(13)
                 .padding(.leading,15)
                 Spacer()

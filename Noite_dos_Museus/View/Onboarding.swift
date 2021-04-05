@@ -13,7 +13,7 @@ import SwiftUI
  */
 struct Onboarding1: View {
     
-    @State var onScreen2: Bool = false
+    //@State var onScreen2: Bool = false
     
     var body: some View {
         NavigationView {
@@ -47,35 +47,35 @@ struct Onboarding1: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    self.onScreen2 = true
-                }, label: {
-                    Text("Próximo")
-                        .frame(width: 280, height: 50, alignment:.center)
-                        .background(Color("Buttoncolor"))
-                        .foregroundColor(.white)
-                        .cornerRadius(25)
-                })
-                .padding(.bottom, 70)
+//                Button(action: {
+//                    self.onScreen2 = true
+//                }, label: {
+//                    Text("Próximo")
+//                        .frame(width: 280, height: 50, alignment:.center)
+//                        .background(Color("Buttoncolor"))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(25)
+//                })
+//                .padding(.bottom, 70)
                 
-                //                NavigationLink(
-                //                    destination: Onboarding2(),
-                //                    label: {
-                //                        Text("Próximo")
-                //                            .frame(width: 280, height: 50, alignment:.center)
-                //                            .background(Color("Buttoncolor"))
-                //                            .foregroundColor(.white)
-                //                            .cornerRadius(25)
-                //
-                //                    })
-                //                    .padding(.bottom, 70)
+                                NavigationLink(
+                                    destination: Onboarding2(),
+                                    label: {
+                                        Text("Próximo")
+                                            .frame(width: 280, height: 50, alignment:.center)
+                                            .background(Color("Buttoncolor"))
+                                            .foregroundColor(.white)
+                                            .cornerRadius(25)
+                
+                                    })
+                                    .padding(.bottom, 70)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Backcolor"))
             .edgesIgnoringSafeArea(.all)
-            .fullScreenCover(isPresented: $onScreen2, content: {
-                Onboarding2()
-            })
+            //.fullScreenCover(isPresented: $onScreen2, content: {
+             //   Onboarding2()
+          //  })
         }
         
     }
@@ -87,7 +87,7 @@ struct Onboarding1: View {
  */
 struct Onboarding2: View {
     
-    @State var onScreen3: Bool = false
+    //@State var onScreen3: Bool = false
     
     var body: some View {
         VStack{
@@ -120,36 +120,39 @@ struct Onboarding2: View {
                     .frame(maxWidth: 300, maxHeight: 100)
                 
                 
-                Button(action: {
-                    self.onScreen3 = true
-                }, label: {
-                    Text("Próximo")
-                        .frame(width: 280, height: 50, alignment:.center)
-                        .background(Color("Buttoncolor"))
-                        .foregroundColor(.white)
-                        .cornerRadius(25)
-                })
-                .padding(.bottom, 70)
+//                Button(action: {
+//                    self.onScreen3 = true
+//                }, label: {
+//                    Text("Próximo")
+//                        .frame(width: 280, height: 50, alignment:.center)
+//                        .background(Color("Buttoncolor"))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(25)
+//                })
+//                .padding(.bottom, 70)
                 
-                //                NavigationLink(
-                //                    destination: Login(),
-                //                    label: {
-                //                        Text("Próximo")
-                //                            .frame(width: 280, height: 50, alignment:.center)
-                //                            .background(Color("Buttoncolor"))
-                //                            .foregroundColor(.white)
-                //                            .cornerRadius(25)
-                //
-                //                    })
-                //                    .padding(.bottom, 70)
+                                NavigationLink(
+                                    destination: Login(),
+                                    label: {
+                                        Text("Próximo")
+                                            .frame(width: 280, height: 50, alignment:.center)
+                                            .background(Color("Buttoncolor"))
+                                            .foregroundColor(.white)
+                                            .cornerRadius(25)
+                
+                                    })
+                                    .padding(.bottom, 70)
+
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
         .edgesIgnoringSafeArea(.all)
-        .fullScreenCover(isPresented: $onScreen3, content: {
-            Login()
-        })
+//        .fullScreenCover(isPresented: $onScreen3, content: {
+//            Login()
+//        })
+        .navigationBarBackButtonHidden(true)
+
     }
     
 }

@@ -38,7 +38,7 @@ struct EventsInformation: View {
                     Spacer()
                 }
                 .padding(.leading, 26)
-                .padding(.top, 28)
+                .padding(.top, 10)
                 
                 HStack {
                     Text(eventLocation)
@@ -65,7 +65,7 @@ struct EventsInformation: View {
                         .font(.system(.subheadline))
                         .fontWeight(.ultraLight)
                         .foregroundColor(.white)
-                    Spacer()
+                   
                 }
                 .padding(.leading, 28)
                 .padding(.top, 14)
@@ -78,7 +78,7 @@ struct EventsInformation: View {
                     Spacer()
                 }
                 .padding(.leading, 19)
-                .padding(.top, 51)
+                .padding(.top, 19)
                 
                 HStack {
                     ForEach(ArriveButtonType.allCases) { arriveButton in

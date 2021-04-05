@@ -112,6 +112,8 @@ struct Login: View {
         .fullScreenCover(isPresented: $goToContentView, content: {
             ContentView()
         })
+        .navigationBarBackButtonHidden(true)
+
     }
     
     struct Login_Previews: PreviewProvider {
