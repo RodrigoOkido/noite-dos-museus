@@ -22,10 +22,11 @@ struct NowEvents: View {
 
             HStack {
                 TextField("search", text: $searchText)
-                        .padding(.leading,20)
+                    .padding(.leading,20)
+                    //.foregroundColor(.blue)
                 .padding(7)
                 .padding(.horizontal)
-                .background(Color(.darkGray))
+                .background(Color("event_background"))
                 .cornerRadius(12)
                 .padding(.horizontal, 15)
                 .overlay (

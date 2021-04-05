@@ -9,11 +9,11 @@ import SwiftUI
 
 
 /**
-    Onboarding Screen. Show some basic informations about the app.
+ Onboarding Screen. Show some basic informations about the app.
  */
 struct Onboarding1: View {
     
-//    @State var onScreen2: Bool = false
+    @State var onScreen2: Bool = false
     
     var body: some View {
         NavigationView {
@@ -47,35 +47,35 @@ struct Onboarding1: View {
                 
                 Spacer()
                 
-//                Button(action: {
-//                    self.onScreen2 = true
-//                }, label: {
-//                    Text("Próximo")
-//                        .frame(width: 280, height: 50, alignment:.center)
-//                        .background(Color("Buttoncolor"))
-//                        .foregroundColor(.white)
-//                        .cornerRadius(25)
-//                })
-//                    .padding(.bottom, 70)
+                Button(action: {
+                    self.onScreen2 = true
+                }, label: {
+                    Text("Próximo")
+                        .frame(width: 280, height: 50, alignment:.center)
+                        .background(Color("Buttoncolor"))
+                        .foregroundColor(.white)
+                        .cornerRadius(25)
+                })
+                .padding(.bottom, 70)
                 
-                NavigationLink(
-                    destination: Onboarding2(),
-                    label: {
-                        Text("Próximo")
-                            .frame(width: 280, height: 50, alignment:.center)
-                            .background(Color("Buttoncolor"))
-                            .foregroundColor(.white)
-                            .cornerRadius(25)
-    
-                    })
-                    .padding(.bottom, 70)
+                //                NavigationLink(
+                //                    destination: Onboarding2(),
+                //                    label: {
+                //                        Text("Próximo")
+                //                            .frame(width: 280, height: 50, alignment:.center)
+                //                            .background(Color("Buttoncolor"))
+                //                            .foregroundColor(.white)
+                //                            .cornerRadius(25)
+                //
+                //                    })
+                //                    .padding(.bottom, 70)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("Backcolor"))
             .edgesIgnoringSafeArea(.all)
-//            .fullScreenCover(isPresented: $onScreen2, content: {
-//                Onboarding2()
-//            })
+            .fullScreenCover(isPresented: $onScreen2, content: {
+                Onboarding2()
+            })
         }
         
     }
@@ -83,12 +83,12 @@ struct Onboarding1: View {
 
 
 /**
-    Second onboard screen view to show more info about the app.
+ Second onboard screen view to show more info about the app.
  */
 struct Onboarding2: View {
     
-//    @State var onScreen3: Bool = false
-
+    @State var onScreen3: Bool = false
+    
     var body: some View {
         VStack{
             Spacer()
@@ -119,37 +119,37 @@ struct Onboarding2: View {
                     .padding(.leading,-80)
                     .frame(maxWidth: 300, maxHeight: 100)
                 
-            
-//            Button(action: {
-//                self.onScreen3 = true
-//            }, label: {
-//                Text("Próximo")
-//                    .frame(width: 280, height: 50, alignment:.center)
-//                    .background(Color("Buttoncolor"))
-//                    .foregroundColor(.white)
-//                    .cornerRadius(25)
-//            })
-//                .padding(.bottom, 70)
                 
-                NavigationLink(
-                    destination: Login(),
-                    label: {
-                        Text("Próximo")
-                            .frame(width: 280, height: 50, alignment:.center)
-                            .background(Color("Buttoncolor"))
-                            .foregroundColor(.white)
-                            .cornerRadius(25)
-
-                    })
-                    .padding(.bottom, 70)
+                Button(action: {
+                    self.onScreen3 = true
+                }, label: {
+                    Text("Próximo")
+                        .frame(width: 280, height: 50, alignment:.center)
+                        .background(Color("Buttoncolor"))
+                        .foregroundColor(.white)
+                        .cornerRadius(25)
+                })
+                .padding(.bottom, 70)
+                
+                //                NavigationLink(
+                //                    destination: Login(),
+                //                    label: {
+                //                        Text("Próximo")
+                //                            .frame(width: 280, height: 50, alignment:.center)
+                //                            .background(Color("Buttoncolor"))
+                //                            .foregroundColor(.white)
+                //                            .cornerRadius(25)
+                //
+                //                    })
+                //                    .padding(.bottom, 70)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("Backcolor"))
         .edgesIgnoringSafeArea(.all)
-//        .fullScreenCover(isPresented: $onScreen3, content: {
-//            Login()
-//        })
+        .fullScreenCover(isPresented: $onScreen3, content: {
+            Login()
+        })
     }
     
 }
@@ -158,15 +158,15 @@ struct Onboarding2: View {
 struct Onboarding_Previews: PreviewProvider {
     static var previews: some View {
         SplashScreen()
-        //Onboarding1()
-        //Onboarding2()
+            //Onboarding1()
+            //Onboarding2()
             .previewDevice("iPhone 12")
             .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
             .previewDisplayName("iPhone 12")
-        //Onboarding2()
+            //Onboarding2()
             
             .previewDevice("iPhone SE (2nd generation)")
-        //SplashScreen()
+            //SplashScreen()
             .previewDevice("iPhone 8")
     }
 }
