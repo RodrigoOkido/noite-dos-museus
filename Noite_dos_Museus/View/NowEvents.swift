@@ -22,7 +22,7 @@ struct NowEvents: View {
             Spacer(minLength: 30)
 
             HStack {
-                TextField("search", text: $searchText)
+                TextField("Search", text: $searchText)
                     .padding(.leading,20)
                     //.foregroundColor(.blue)
                 .padding(7)
@@ -33,7 +33,7 @@ struct NowEvents: View {
                 .overlay (
                     HStack{
                         Image(systemName:"magnifyingglass")
-                            .foregroundColor(Color(.systemGray))
+                            .foregroundColor(Color("searchBarIcon"))
                         Spacer()
                     }
                     .padding(.horizontal,20)

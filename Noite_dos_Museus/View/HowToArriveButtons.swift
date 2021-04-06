@@ -61,29 +61,59 @@ struct HowToArriveButtons: View {
     
     var body: some View {
         HStack{
-            Button(action: {
-                print("Bus")
-            }) {
-                ZStack {
-                    Color("event_background")
-                        .frame(width: 71, height: 90)
-                        .cornerRadius(10)
-                    VStack{
-                        arriveButtonType.icon
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 41)
-                            .foregroundColor(Color("icon_color"))
-                        Text(arriveButtonType.buttonTitle)
-                            .foregroundColor(Color("icon_color"))
-                            .fontWeight(.medium)
-                            .font(.subheadline)
+            NavigationLink(
+                destination: HowToArrive(optionSelected: arriveButtonType.id),
+                label: {
+                    ZStack {
+                        Color("event_background")
+                            .frame(width: 71, height: 90)
+                            .cornerRadius(10)
+                        VStack{
+                            arriveButtonType.icon
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 41)
+                                .foregroundColor(Color("icon_color"))
+                            Text(arriveButtonType.buttonTitle)
+                                .foregroundColor(Color("icon_color"))
+                                .fontWeight(.medium)
+                                .font(.subheadline)
+                        }
                     }
+                }
+            )
+            
+        }
+    }
+}
+
+
+struct HowToArriveButtonClicked: View {
+    @State var arriveButtonType: ArriveButtonType
+    
+    var body: some View {
+        HStack {
+            ZStack {
+                Color("event_background")
+                    .frame(width: 71, height: 90)
+                    .cornerRadius(10)
+                VStack{
+                    arriveButtonType.icon
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 41)
+                        .foregroundColor(Color("Buttoncolor"))
+                    Text(arriveButtonType.buttonTitle)
+                        .foregroundColor(Color("Buttoncolor"))
+                        .fontWeight(.medium)
+                        .font(.subheadline)
                 }
             }
         }
     }
 }
+
+
 
 struct HowToArriveButtons_Previews: PreviewProvider {
     static var previews: some View {
